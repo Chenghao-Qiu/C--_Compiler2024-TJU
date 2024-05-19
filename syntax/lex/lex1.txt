@@ -1,0 +1,16 @@
+int <KW,16>
+a <IDN,a>
+; <SE,8>
+void <KW,16>
+func <IDN,func>
+( <SE,8>
+) <SE,8>
+{ <SE,8>
+a <IDN,a>
+= <OP,10>
+10 <INT,10>
+; <SE,8>
+return <KW,16>
+0 <INT,0>
+; <SE,8>
+} <SE,8>
