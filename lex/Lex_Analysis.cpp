@@ -272,10 +272,14 @@ string Get_Tokens(int state, string strToken, FA DFA){
     return s;
 }
 
-void lexcial(const char* address, FA DFA){
+void lexcial(const char* address, FA DFA , string x){
     fstream Test_sample(address);
     ofstream record_tokens;
-    record_tokens.open("lex.txt", ios::out | ios::trunc);
+    string lex ="../syntax/lex/lex";
+    string txt =".txt";
+    lex += x;
+    lex += txt; 
+    record_tokens.open(lex, ios::out | ios::trunc);
     if(Test_sample.is_open() && record_tokens.is_open()){ //先判断文件是否正确打开
         char ch;    //字符变量，存储最新读入的源程序字符
         string buf; //缓冲区
@@ -338,7 +342,11 @@ void lexical_analysis(){
     minDFA = minimize(DFA);
    // cout << endl << "minDFA" << endl;
     //cout << endl;
-    lexcial("05_var_defn.sy", minDFA);
+    lexcial("01_var_defn.sy", minDFA,"1");
+    lexcial("02_var_defn.sy", minDFA,"2");
+    lexcial("03_var_defn.sy", minDFA,"3");
+    lexcial("04_var_defn.sy", minDFA,"4");
+    lexcial("05_var_defn.sy", minDFA,"5");
     
 }
 
